@@ -1,6 +1,21 @@
 import WantedLogo from "./components/WantedLogo";
 
 export default function Home() {
+  const teamMembers = {
+    leader: { name: "카리나", role: "팀장" },
+    globalBiz: [
+      { name: "심은경" },
+      { name: "브라보" },
+      { name: "한소희" },
+      { name: "박지민" },
+      { name: "손흥민" },
+    ],
+    hrBiz: [
+      { name: "박시연" },
+      { name: "양파쿵야" },
+    ],
+  };
+
   const teamTasks = [
     {
       icon: "🌏",
@@ -58,6 +73,113 @@ export default function Home() {
           글로벌 시장과 HR 비즈니스를 연결하는 파트너십 전문 팀입니다.
         </p>
       </header>
+
+      {/* Team Members Section */}
+      <section className="py-20 px-6 bg-bg" style={{ borderBottom: "1px solid var(--semantic-line-solid-alternative)" }}>
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="text-center font-semibold text-text mb-10"
+            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
+          >
+            팀 멤버
+          </h2>
+
+          {/* 팀장 */}
+          <div className="flex justify-center mb-8">
+            <div
+              className="flex items-center gap-4 rounded-xl px-8 py-5"
+              style={{
+                background: "rgba(0,102,255,0.05)",
+                border: "1px solid rgba(0,102,255,0.2)",
+              }}
+            >
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                style={{ background: "var(--semantic-primary-normal)" }}
+              >
+                {teamMembers.leader.name[0]}
+              </div>
+              <div>
+                <p
+                  className="font-semibold text-text"
+                  style={{ fontSize: "16px", letterSpacing: "0.0057em" }}
+                >
+                  {teamMembers.leader.name}
+                </p>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    letterSpacing: "0.0252em",
+                    color: "var(--semantic-primary-normal)",
+                    fontWeight: 600,
+                  }}
+                >
+                  {teamMembers.leader.role}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 팀원 그룹 */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Global Biz */}
+            <div
+              className="rounded-xl p-6"
+              style={{ border: "1px solid var(--semantic-line-solid-normal)", boxShadow: "var(--semantic-shadow-xsmall)" }}
+            >
+              <p
+                className="font-semibold mb-4"
+                style={{ fontSize: "13px", letterSpacing: "0.0194em", color: "var(--semantic-primary-normal)" }}
+              >
+                🌏 Global Biz
+              </p>
+              <div className="flex flex-col gap-3">
+                {teamMembers.globalBiz.map((m) => (
+                  <div key={m.name} className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0"
+                      style={{ background: "var(--semantic-fill-normal)", color: "var(--semantic-label-normal)" }}
+                    >
+                      {m.name[0]}
+                    </div>
+                    <span style={{ fontSize: "14px", letterSpacing: "0.0145em", color: "var(--semantic-label-normal)" }}>
+                      {m.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* HR Biz */}
+            <div
+              className="rounded-xl p-6"
+              style={{ border: "1px solid var(--semantic-line-solid-normal)", boxShadow: "var(--semantic-shadow-xsmall)" }}
+            >
+              <p
+                className="font-semibold mb-4"
+                style={{ fontSize: "13px", letterSpacing: "0.0194em", color: "var(--semantic-primary-normal)" }}
+              >
+                👥 HR Biz
+              </p>
+              <div className="flex flex-col gap-3">
+                {teamMembers.hrBiz.map((m) => (
+                  <div key={m.name} className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0"
+                      style={{ background: "var(--semantic-fill-normal)", color: "var(--semantic-label-normal)" }}
+                    >
+                      {m.name[0]}
+                    </div>
+                    <span style={{ fontSize: "14px", letterSpacing: "0.0145em", color: "var(--semantic-label-normal)" }}>
+                      {m.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Tasks Section */}
       <section className="flex-1 py-20 px-6">
