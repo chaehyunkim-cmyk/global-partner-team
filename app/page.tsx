@@ -120,6 +120,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Tasks Section */}
+      <section className="flex-1 py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="text-center font-semibold text-text mb-10"
+            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
+          >
+            우리 팀이 하는 일
+          </h2>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {teamTasks.map((task, index) => (
+              <div
+                key={index}
+                className="bg-bg rounded-xl p-8 transition-shadow duration-150 hover:shadow-md"
+                style={{
+                  border: "1px solid var(--semantic-line-solid-normal)",
+                  boxShadow: "var(--semantic-shadow-xsmall)",
+                }}
+              >
+                <div className="text-3xl mb-5">{task.icon}</div>
+                <h3
+                  className="font-semibold text-text mb-3"
+                  style={{ fontSize: "18px", lineHeight: "26px", letterSpacing: "-0.002em" }}
+                >
+                  {task.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "22px",
+                    letterSpacing: "0.0145em",
+                    color: "var(--semantic-label-alternative)",
+                  }}
+                >
+                  {task.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Members Section */}
       <section className="py-20 px-6 bg-bg" style={{ borderBottom: "1px solid var(--semantic-line-solid-alternative)" }}>
         <div className="max-w-3xl mx-auto">
@@ -223,49 +266,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tasks Section */}
-      <section className="flex-1 py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2
-            className="text-center font-semibold text-text mb-10"
-            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
-          >
-            우리 팀이 하는 일
-          </h2>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {teamTasks.map((task, index) => (
-              <div
-                key={index}
-                className="bg-bg rounded-xl p-8 transition-shadow duration-150 hover:shadow-md"
-                style={{
-                  border: "1px solid var(--semantic-line-solid-normal)",
-                  boxShadow: "var(--semantic-shadow-xsmall)",
-                }}
-              >
-                <div className="text-3xl mb-5">{task.icon}</div>
-                <h3
-                  className="font-semibold text-text mb-3"
-                  style={{ fontSize: "18px", lineHeight: "26px", letterSpacing: "-0.002em" }}
-                >
-                  {task.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "14px",
-                    lineHeight: "22px",
-                    letterSpacing: "0.0145em",
-                    color: "var(--semantic-label-alternative)",
-                  }}
-                >
-                  {task.description}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
