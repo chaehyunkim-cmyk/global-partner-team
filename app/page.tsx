@@ -1,65 +1,158 @@
-import Image from "next/image";
+import WantedLogo from "./components/WantedLogo";
 
 export default function Home() {
+  const teamTasks = [
+    {
+      icon: "🌏",
+      title: "Global Biz",
+      description:
+        "글로벌 시장을 대상으로 비즈니스 기회를 발굴하고 파트너십을 구축합니다. 해외 기업과의 협력을 통해 새로운 성장 동력을 만들어 나갑니다.",
+    },
+    {
+      icon: "👥",
+      title: "HR Biz",
+      description:
+        "기업의 채용 니즈에 맞는 인재 솔루션을 제공합니다. HR 파트너로서 고객사의 인재 확보와 조직 성장을 함께 지원합니다.",
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen flex flex-col" style={{ background: "var(--semantic-background-alternative)" }}>
+
+      {/* Header */}
+      <header
+        className="py-24 px-6 text-center"
+        style={{
+          background: "linear-gradient(160deg, rgba(0,102,255,0.07) 0%, rgba(0,102,255,0.03) 50%, #ffffff 100%)",
+          borderBottom: "1px solid var(--semantic-line-solid-alternative)",
+        }}
+      >
+        <div className="flex justify-center mb-8">
+          <WantedLogo className="text-[#171719]" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <span
+          className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-6"
+          style={{
+            background: "rgba(0, 102, 255, 0.08)",
+            color: "var(--semantic-primary-normal)",
+            letterSpacing: "0.0252em",
+          }}
+        >
+          Wanted Lab
+        </span>
+        <h1
+          className="font-bold text-text mb-4"
+          style={{ fontSize: "40px", lineHeight: "52px", letterSpacing: "-0.0282em" }}
+        >
+          글로벌파트너팀
+        </h1>
+        <p
+          className="mx-auto max-w-md"
+          style={{
+            fontSize: "16px",
+            lineHeight: "26px",
+            letterSpacing: "0.0057em",
+            color: "var(--semantic-label-alternative)",
+          }}
+        >
+          글로벌 시장과 HR 비즈니스를 연결하는 파트너십 전문 팀입니다.
+        </p>
+      </header>
+
+      {/* Tasks Section */}
+      <section className="flex-1 py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="text-center font-semibold text-text mb-10"
+            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            우리 팀이 하는 일
+          </h2>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {teamTasks.map((task, index) => (
+              <div
+                key={index}
+                className="bg-bg rounded-xl p-8 transition-shadow duration-150 hover:shadow-md"
+                style={{
+                  border: "1px solid var(--semantic-line-solid-normal)",
+                  boxShadow: "var(--semantic-shadow-xsmall)",
+                }}
+              >
+                <div className="text-3xl mb-5">{task.icon}</div>
+                <h3
+                  className="font-semibold text-text mb-3"
+                  style={{ fontSize: "18px", lineHeight: "26px", letterSpacing: "-0.002em" }}
+                >
+                  {task.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "22px",
+                    letterSpacing: "0.0145em",
+                    color: "var(--semantic-label-alternative)",
+                  }}
+                >
+                  {task.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* CTA Section */}
+      <section
+        className="py-20 px-6 text-center bg-bg"
+        style={{ borderTop: "1px solid var(--semantic-line-solid-alternative)" }}
+      >
+        <h2
+          className="font-semibold text-text mb-3"
+          style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
+        >
+          궁금한 점이 있으신가요?
+        </h2>
+        <p
+          className="mb-8"
+          style={{
+            fontSize: "16px",
+            lineHeight: "24px",
+            letterSpacing: "0.0057em",
+            color: "var(--semantic-label-alternative)",
+          }}
+        >
+          팀 업무나 협업에 대해 언제든지 문의해 주세요.
+        </p>
+        <a
+          href="mailto:chaehyun.kim@wantedlab.com"
+          className="inline-block text-white font-semibold rounded-lg transition-colors duration-100"
+          style={{
+            background: "var(--semantic-primary-normal)",
+            fontSize: "14px",
+            lineHeight: "20px",
+            letterSpacing: "0.0145em",
+            padding: "12px 24px",
+          }}
+          onMouseEnter={undefined}
+        >
+          문의하기
+        </a>
+      </section>
+
+      {/* Footer */}
+      <footer
+        className="py-5 text-center"
+        style={{
+          borderTop: "1px solid var(--semantic-line-solid-alternative)",
+          fontSize: "12px",
+          lineHeight: "16px",
+          letterSpacing: "0.0252em",
+          color: "var(--semantic-label-assistive)",
+        }}
+      >
+        © 2026 Wanted Lab. All rights reserved.
+      </footer>
+    </main>
   );
 }

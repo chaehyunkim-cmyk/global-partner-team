@@ -1,26 +1,53 @@
+@import url("https://static.wanted.co.kr/fonts/pretendard/pretendard-jp/pretendardvariable-jp-dynamic-subset.min.css");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Montage semantic colors — light mode */
+  --semantic-primary-normal:               #0066ff;
+  --semantic-primary-strong:              #005eeb;
+  --semantic-primary-heavy:               #0054d1;
+
+  --semantic-label-normal:                #171719;
+  --semantic-label-neutral:               rgba(46, 47, 51, 0.88);
+  --semantic-label-alternative:           rgba(55, 56, 60, 0.61);
+  --semantic-label-assistive:             rgba(55, 56, 60, 0.28);
+
+  --semantic-background-normal:           #ffffff;
+  --semantic-background-alternative:      #f7f7f8;
+  --semantic-background-elevated:         #ffffff;
+
+  --semantic-fill-normal:                 rgba(112, 115, 124, 0.08);
+
+  --semantic-line-solid-normal:           #e1e2e4;
+  --semantic-line-solid-neutral:          #eaebec;
+  --semantic-line-solid-alternative:      #f4f4f5;
+
+  --semantic-shadow-xsmall: 0px 1px 2px -1px rgba(23, 23, 25, 0.10);
+  --semantic-shadow-small:  0px 2px 4px -2px rgba(23, 23, 25, 0.06),
+                             0px 4px 6px -1px rgba(23, 23, 25, 0.06);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary:          var(--semantic-primary-normal);
+  --color-primary-hover:    var(--semantic-primary-strong);
+  --color-bg:               var(--semantic-background-normal);
+  --color-bg-alt:           var(--semantic-background-alternative);
+  --color-text:             var(--semantic-label-normal);
+  --color-text-sub:         var(--semantic-label-neutral);
+  --color-text-muted:       var(--semantic-label-alternative);
+  --color-border:           var(--semantic-line-solid-normal);
+  --color-border-light:     var(--semantic-line-solid-alternative);
+  --font-sans: 'Pretendard JP Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--semantic-background-normal);
+  color: var(--semantic-label-normal);
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.0057em;
 }
