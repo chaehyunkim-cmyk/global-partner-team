@@ -1,4 +1,5 @@
 import WantedLogo from "./components/WantedLogo";
+import ConsultationForm from "./components/ConsultationForm";
 
 export default function Home() {
   const teamMembers = {
@@ -311,42 +312,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Consultation Section */}
       <section
-        className="py-20 px-6 text-center bg-bg"
+        className="py-20 px-6 bg-bg"
         style={{ borderTop: "1px solid var(--semantic-line-solid-alternative)" }}
       >
-        <h2
-          className="font-semibold text-text mb-3"
-          style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
-        >
-          궁금한 점이 있으신가요?
-        </h2>
-        <p
-          className="mb-8"
-          style={{
-            fontSize: "16px",
-            lineHeight: "24px",
-            letterSpacing: "0.0057em",
-            color: "var(--semantic-label-alternative)",
-          }}
-        >
-          팀 업무나 협업에 대해 언제든지 문의해 주세요.
-        </p>
-        <a
-          href="mailto:chaehyun.kim@wantedlab.com"
-          className="inline-block text-white font-semibold rounded-lg transition-colors duration-100"
-          style={{
-            background: "var(--semantic-primary-normal)",
-            fontSize: "14px",
-            lineHeight: "20px",
-            letterSpacing: "0.0145em",
-            padding: "12px 24px",
-          }}
-          onMouseEnter={undefined}
-        >
-          문의하기
-        </a>
+        <div className="max-w-2xl mx-auto">
+          <h2
+            className="text-center font-semibold text-text mb-3"
+            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
+          >
+            상담 신청
+          </h2>
+          <p
+            className="text-center mb-10"
+            style={{
+              fontSize: "16px",
+              lineHeight: "24px",
+              letterSpacing: "0.0057em",
+              color: "var(--semantic-label-alternative)",
+            }}
+          >
+            팀 업무나 협업에 대해 궁금한 점을 남겨 주세요.
+          </p>
+          <ConsultationForm />
+        </div>
       </section>
 
       {/* Footer */}
