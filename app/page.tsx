@@ -74,6 +74,52 @@ export default function Home() {
         </p>
       </header>
 
+      {/* Mission Section */}
+      <section
+        className="py-20 px-6 bg-bg"
+        style={{ borderBottom: "1px solid var(--semantic-line-solid-alternative)" }}
+      >
+        <div className="max-w-3xl mx-auto text-center">
+          <h2
+            className="font-semibold text-text mb-4"
+            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
+          >
+            팀 미션
+          </h2>
+          <p
+            className="mx-auto max-w-xl mb-14"
+            style={{ fontSize: "16px", lineHeight: "26px", letterSpacing: "0.0057em", color: "var(--semantic-label-alternative)" }}
+          >
+            글로벌 시장과 최고의 인재를 연결해 기업의 성장을 가속합니다.
+          </p>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              { icon: "🌐", title: "글로벌 시각", desc: "세계 시장의 흐름을 읽고 새로운 비즈니스 기회를 먼저 발굴합니다." },
+              { icon: "🤝", title: "파트너십", desc: "고객사의 성공을 우리의 성공으로 여기는 진정한 파트너가 됩니다." },
+              { icon: "⚡", title: "실행력", desc: "빠르게 시도하고 데이터로 검증하며 결과로 증명합니다." },
+            ].map((v) => (
+              <div
+                key={v.title}
+                className="rounded-xl p-6 text-left"
+                style={{ border: "1px solid var(--semantic-line-solid-normal)", boxShadow: "var(--semantic-shadow-xsmall)" }}
+              >
+                <div className="text-2xl mb-3">{v.icon}</div>
+                <p
+                  className="font-semibold text-text mb-2"
+                  style={{ fontSize: "15px", letterSpacing: "0.0096em" }}
+                >
+                  {v.title}
+                </p>
+                <p style={{ fontSize: "13px", lineHeight: "20px", letterSpacing: "0.0194em", color: "var(--semantic-label-alternative)" }}>
+                  {v.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Members Section */}
       <section className="py-20 px-6 bg-bg" style={{ borderBottom: "1px solid var(--semantic-line-solid-alternative)" }}>
         <div className="max-w-3xl mx-auto">
@@ -217,6 +263,47 @@ export default function Home() {
                   }}
                 >
                   {task.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Collaboration Section */}
+      <section
+        className="py-20 px-6 bg-bg"
+        style={{ borderBottom: "1px solid var(--semantic-line-solid-alternative)" }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="font-semibold text-text mb-3 text-center"
+            style={{ fontSize: "22px", lineHeight: "30px", letterSpacing: "-0.0194em" }}
+          >
+            협업 안내
+          </h2>
+          <p
+            className="text-center mb-10"
+            style={{ fontSize: "16px", lineHeight: "26px", letterSpacing: "0.0057em", color: "var(--semantic-label-alternative)" }}
+          >
+            이런 경우 글로벌파트너팀에 연락해 주세요.
+          </p>
+
+          <div className="grid gap-3 md:grid-cols-2">
+            {[
+              { icon: "🌍", text: "해외 사업 기회 탐색 또는 글로벌 파트너십이 필요할 때" },
+              { icon: "🧑‍💼", text: "채용 및 HR 솔루션 도입을 검토하고 있을 때" },
+              { icon: "🔗", text: "타 팀과의 글로벌 협업 창구가 필요할 때" },
+              { icon: "💬", text: "해외 시장 정보나 파트너사 레퍼런스가 필요할 때" },
+            ].map((item) => (
+              <div
+                key={item.text}
+                className="flex items-start gap-4 rounded-xl p-5"
+                style={{ background: "var(--semantic-background-alternative)", border: "1px solid var(--semantic-line-solid-alternative)" }}
+              >
+                <span className="text-xl mt-0.5 flex-shrink-0">{item.icon}</span>
+                <p style={{ fontSize: "14px", lineHeight: "22px", letterSpacing: "0.0145em", color: "var(--semantic-label-normal)" }}>
+                  {item.text}
                 </p>
               </div>
             ))}
